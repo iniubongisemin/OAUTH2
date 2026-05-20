@@ -1,7 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
 from .managers import UserManager
 
@@ -21,7 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=True,
         help_text=_("Unselect instead of deleting accounts."),
     )
-    date_joined = models.DateTimeField(_("date_joined"), default=timezone.now)
+    date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
 
     objects = UserManager()
 
